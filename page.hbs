@@ -6,31 +6,25 @@
 {{#post}}
 
 <article class="post u-marginBottom40 u-relative">
-
-    <header class="post-header u-container u-maxWidth740 u-paddingTop30">
-        <h1 class="post-title u-fontSize40 u-paddingTop20 u-contentTitle u-paddingBottom2 u-fontWeightBold u-md-fontSizeLarger">{{title}}</h1>
-    </header>
-
     {{!-- Figure --}}
     {{#if feature_image}}
-        <figure class="post-image u-block u-marginAuto u-marginTop30 u-maxWidth1100">
-            <img
-                srcset="{{img_url feature_image size="s"}} 300w,
-                        {{img_url feature_image size="m"}} 600w,
-                        {{img_url feature_image size="l"}} 1000w,
-                        {{img_url feature_image size="xl"}} 2000w"
-                sizes="(max-width: 400px) 300px,(max-width: 730px) 600px, (max-width: 1600px) 1000px"
-                src="{{img_url feature_image size="xl"}}"
-                alt="{{title}}"
-                class="u-block u-marginAuto"
-            />
-        </figure>
+        <img class="u-absolute0 u-image u-block blur-up lazyload"
+            srcset="{{img_url feature_image size="s"}} 300w,
+                    {{img_url feature_image size="m"}} 600w,
+                    {{img_url feature_image size="l"}} 1000w,
+                    {{img_url feature_image size="xl"}} 2000w"
+            sizes="(max-width: 800px) 600px, (max-width: 1170px) 700px, 1400px"
+            src="{{img_url feature_image size="m"}}"
+            alt="{{title}}"
+        />
+        <div class="u-primaryGradient u-absolute0 zindex2"></div>
     {{/if}}
+</article>
 
+<article>
     <section id="post-body" class="post-body u-container u-maxWidth740 u-relative u-clear">
         {{content}}
     </section>
-
 </article>
 
 {{/post}}

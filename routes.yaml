@@ -1,0 +1,12 @@
+routes:
+
+collections:
+  /:
+    permalink: /{slug}/
+    template:
+      - godo-template-featured
+      - index
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/
